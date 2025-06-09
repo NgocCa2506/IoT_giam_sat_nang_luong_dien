@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Năng Lượng Điện</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.oAISkDBiz2_numCn2ZX4nQHaHa?w=179&h=180&c=7&r=0&o=5&dpr=1.6&pid=1.7">
+</head>
+<body>
+    <h1>Quản Lý Năng Lượng Điện</h1>
+    <div class="time">
+        <p><span id="lastUpdated">Đang tải...</span></p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="card combined-card">
+                <h2>Thông Số Điện và Nhiệt Độ, Độ Ẩm</h2>
+                <table>
+                    <tr>
+                        <th>Chỉ số</th>
+                        <th>Giá trị</th>
+                    </tr>
+                    <tr>
+                        <td>Điện áp</td>
+                        <td id="voltage">Đang tải...</td>
+                    </tr>
+                    <tr>
+                        <td>Dòng điện</td>
+                        <td id="current">Đang tải...</td>
+                    </tr>
+                    <tr>
+                        <td>Công suất</td>
+                        <td id="power">Đang tải...</td>
+                    </tr>
+                    <tr>
+                        <td>Nhiệt độ 🌡️</td>
+                        <td id="temperature">Đang tải...</td>
+                    </tr>
+                    <tr>
+                        <td>Độ ẩm 💧</td>
+                        <td id="humidity">Đang tải...</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card small-card">
+                <h2>Điều Khiển Relay</h2>
+                <button id="relayButton" class="relay-button off">Tắt</button>
+                <h3>Đặt Lịch Bật/Tắt</h3>
+                <form id="relayScheduleForm">
+                    <label for="date">Ngày:</label>
+                    <input type="date" id="date" name="date">
+
+                    <label for="timeOn">Thời gian bật:</label>
+                    <input type="time" id="timeOn" name="timeOn">
+
+                    <label for="timeOff">Thời gian tắt:</label>
+                    <input type="time" id="timeOff" name="timeOff">
+
+                    <button type="submit" id="setScheduleButton">Đặt Lịch</button>
+                    <button type="button" id="relayScheduleButton" style="display: none;">Hủy lịch</button>
+                </form>
+                <div id="scheduleFeedback" class="feedback"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card small-card">
+                <h2>Tiêu Thụ Hôm Nay</h2>
+                <table>
+                    <tr>
+                        <td>Hôm nay</td>
+                        <td id="energyToday">Đang tải...</td>
+                    </tr>
+                    <tr>
+                        <td>Hôm qua</td>
+                        <td id="energyYesterday">Đang tải...</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card small-card">
+                <h2>Tháng Này</h2>
+                <table>
+                    <tr>
+                        <td>Năng lượng</td>
+                        <td id="energyThisMonth">Đang tải...</td>
+                    </tr>
+                    <tr>
+                        <td>Chi phí</td>
+                        <td id="costThisMonth">Đang tải...</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="card small-card">
+                <h2>Tháng Trước</h2>
+                <table>
+                    <tr>
+                        <td>Năng lượng</td>
+                        <td id="energyLastMonth">Đang tải...</td>
+                    </tr>
+                    <tr>
+                        <td>Chi phí</td>
+                        <td id="costLastMonth">Đang tải...</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
